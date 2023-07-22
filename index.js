@@ -1,7 +1,8 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const { sequelize } = require('./data/data_index.js');
+const { sequelize } = require('./data');
+
 
 
 async function launchServer() {
@@ -21,11 +22,11 @@ async function launchServer() {
         console.log(error);
         process.exit(1);
     }
-}
 
-const port = process.env.PORT || 8080; // Make 8080 as a default PORT 
-app.listen(port, () => {
-    console.log(`server on port: ${port}`);
-})
+    const port = process.env.PORT || 8080; // Make 8080 as a default PORT 
+    app.listen(port, () => {
+        console.log(`server on port: ${port}`);
+    });
+}
 
 launchServer();

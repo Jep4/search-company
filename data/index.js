@@ -4,9 +4,9 @@ const Sequelize = require('sequelize');
 const config = {
     host: process.env.SEACOM_MYSQL_HOST || '127.0.0.1',
     port: 3306,
-    database: 'searcom',
-    user: 'searcom_admin',
-    password: process.env.SEACOM_MYSQL_HOST || '1234',
+    database: 'seacom',
+    user: 'seacom_admin',
+    password: process.env.SEACOM_MYSQL_PASSWORD || '1234',
 };
 
 
