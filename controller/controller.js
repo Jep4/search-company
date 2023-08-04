@@ -1,8 +1,7 @@
 // CONTROLLER
 
-
-const { CompanyStat } = require('../data/index');
-const { GlobalStat } = require('../database');
+const { CompanyStat } = require('../data');
+const { wrapEHandler } = require("../'util");
 
 async function getAll(req, res) {
     const result = await CompanyStat.findAll();
@@ -19,7 +18,7 @@ async function insertUpdate(req, res) {
         return; 
     }
 
-    const count = await CompanyStat.count({ where: name })
+    const count = await CompanyStat.count({ where: { name } })
 
     if (count == 0) {
         await CompanyStat.create(req.body);
@@ -46,8 +45,8 @@ async function remove(req, res) {
     res.status(200).json({ result: 'delete success' });
 }
 
-module.exports = {
+module.exports = wrapEHandler({
     getAll,
     insertUpdate,
     remove
-}
+});

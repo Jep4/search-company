@@ -1,6 +1,7 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const statController = require('./controller/controller');
 const { sequelize } = require('./data');
 
 
@@ -27,6 +28,10 @@ async function launchServer() {
     app.listen(port, () => {
         console.log(`server on port: ${port}`);
     });
+
+    app.get('/info', statController.getAll);
+    app.post('/info', statController.insertUpdate);
+    app.delete('/info', statController.remove);
 }
 
 launchServer();
