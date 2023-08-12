@@ -14,3 +14,5 @@ const wrapEHandler = (obj) => {
         });
     return obj;
 };
+
+module.exports = { wrapEHandler };

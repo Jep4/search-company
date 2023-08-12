@@ -1,7 +1,7 @@
 // CONTROLLER
 
 const { CompanyStat } = require('../data');
-const { wrapEHandler } = require("../'util");
+const { wrapEHandler } = require("../util");
 
 async function getAll(req, res) {
     const result = await CompanyStat.findAll();
