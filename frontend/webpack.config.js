@@ -32,6 +32,10 @@ module.exports = {
                     },
                 },
             },
+            {
+                test: /\.(sass|less|css)$/,
+                use: ['style-loader', 'css-loader', 'less-loader']
+            },
         ],
     },
     resolve: {
@@ -53,5 +57,10 @@ module.exports = {
             "async_hooks": false,
         },
         extensions: [".js", ".jsx"],
+    },
+    performance: {
+        hints: false,
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
     },
 };

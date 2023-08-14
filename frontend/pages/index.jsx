@@ -1,29 +1,19 @@
-const React = require('react');
-var { useState } = require('react');
-
-function Header({ title }) {
-    return <h1>{title ? title : 'Default Title'}</h1>;
-}
-
+﻿import React from 'react';
+import { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
 export default function HomePage() {
-    const [likes, setLikes] = useState(0);
-    const names = ['first', 'second', 'third'];
-    function handleClick() {
-        setLikes(likes + 1);
-    }
-
     return (
         <div>
-            <Header title="sea-com" />
-            <ul>
-                {names.map((name) => (
-                    <li key={name}>
-                        <a href={`/search?q=${name}`}>{name}</a>
-                    </li>
-                ))}
-            </ul>
+            <div>
+                <button type="button" class="btn btn-default" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                </button>
 
-            <button onClick={handleClick}>Like({likes})</button>
-        </div>
-    );
-}
+            </div>
+
+            <div className="panel panel-default">
+                    Contents here
+            </div>
+         </div>
+
+)}
