@@ -1,1 +1,4 @@
-node_modules/
+.vs/
+backend/node_modules/
+frontend/.next/
+frontend/node_modules/
