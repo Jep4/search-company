@@ -3,7 +3,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const statController = require('./controller/controller');
 const { sequelize } = require('./data');
+const cors = require("cors");
 process.env.NODE_ENV = 'production';
+
+const corsOptions = {
+    origin: '*',
+    credentials: 'true',
+    optionSuccessStatus: 200,
+}
 
 async function launchServer() {
 
@@ -11,6 +18,7 @@ async function launchServer() {
     app.use(bodyParser.json());
 
     app.use(express.static(__dirname));
+    app.use(cors(corsOptions));
 
     app.get('/', (req, res) => {
         res.send("Database");
