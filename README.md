@@ -1,6 +1,6 @@
 # search-company (ongoing)
 
-![alt text]([https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true](https://github.com/Jep4/search-company/blob/main/demo/demo1.png?raw=true))
+![alt text](https://github.com/Jep4/search-company/blob/main/demo/demo1.png?raw=true)
 
 
 Web project (html / css / Js / Node.js / React / Next.js mySQL / AWS(not implemented))<br/><br/>
